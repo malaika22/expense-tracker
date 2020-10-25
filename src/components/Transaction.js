@@ -3,7 +3,7 @@ import {GlobalContext} from '../context/GlobalState';
  const Transaction = () => {
      const [text,setText] = useState('');
      const [amount,setAmount] = useState(0);
-     const [description,setDescription] = useState('');
+     const [description,setDescription] = useState('expense');
      const {addTransaction} = useContext(GlobalContext);
 
     const onSubmit = e => {
@@ -26,9 +26,9 @@ import {GlobalContext} from '../context/GlobalState';
                  <h1>Amount</h1>
                  <input type='number' value={amount} placeholder='Enter Transaction Amount' name='transaction-amount' onChange= {(e)=> setAmount(e.target.value)}/>
                  <h1>Description</h1>
-                 <select type='select' value={description} onChange={(e) => setDescription(e.target.value)}>
-                     <option name='description' value='expense' >Expense</option>
-                     <option name='description' value='income' >Income</option>
+                 <select type='select' value={description} name='description' onChange={(e) => setDescription(e.target.value)}>
+                     <option  value='expense'  >Expense</option>
+                     <option  value='income' >Income</option>
                  </select>
                  <input type='submit' value='Add Transaction' />
              </form>
