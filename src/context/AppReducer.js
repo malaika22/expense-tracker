@@ -21,6 +21,23 @@ export default function AppReducer (state,action){
                     }
                 }
             }
+            break;
+        case 'DELETE_EXPENSE':
+            return{
+                ...state,
+                transactions: {
+                    ...state.transactions,
+                    expenses: state.transactions.expenses.filter(expense => expense.id!== action.payload)
+                }
+            }
+        case 'DELETE_INCOME':
+            return{
+                ...state,
+                transactions: {
+                    ...state.transactions,
+                    incomes: state.transactions.incomes.filter(income => income.id!== action.payload )
+                }
+            }
             
         default:
             return state;
