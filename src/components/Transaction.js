@@ -18,21 +18,38 @@ import {GlobalContext} from '../context/GlobalState';
         addTransaction(newTransaction)
     }
     return(
-        <>
-             <h2>Add Transaction</h2>
+        <div className='transaction-container'>
+             <h2 className='transaction-heading'>Add Transaction</h2>
              <form onSubmit={onSubmit}>
-                 <h1>Text</h1>
-                 <input type='text' value={text} placeholder='Enter Transaction....' name='transaction' onChange={(e) => setText(e.target.value)}/>
-                 <h1>Amount</h1>
-                 <input type='number' value={amount} placeholder='Enter Transaction Amount' name='transaction-amount' onChange= {(e)=> setAmount(e.target.value)}/>
-                 <h1>Description</h1>
-                 <select type='select' value={description} name='description' onChange={(e) => setDescription(e.target.value)}>
-                     <option  value='expense'  >Expense</option>
-                     <option  value='income' >Income</option>
-                 </select>
-                 <input type='submit' value='Add Transaction' />
+                 <div className='form'>
+                    <div className='form-group'>
+                        <labels className='form-labels'>Text: </labels>
+                        <input className='form-control' autoComplete='off' 
+                            type='text' 
+                            value={text} placeholder='Enter Transaction....' 
+                            name='transaction' 
+                            onChange={(e) => setText(e.target.value)}
+                        />
+                    </div>
+                    <div className='form-group'>
+                        <labels className='form-labels'>Amount: </labels>
+                        <input className='form-control' 
+                            type='number' value={amount} placeholder='Enter Transaction Amount' 
+                            name='transaction-amount' 
+                            onChange= {(e)=> setAmount(e.target.value)}
+                        />
+                    </div>
+                    <div className='form-group select'>
+                        <labels className='form-labels'>Description: </labels>
+                        <select className='selectTransaction' type='select' value={description} name='description' onChange={(e) => setDescription(e.target.value)}>
+                            <option className='transactionOption' value='expense'  >Expense</option>
+                            <option className='transactionOption' value='income' >Income</option>
+                        </select>
+                    </div>
+                 </div> 
+                 <input type='submit' value='Add Transaction' className='transaction-btn' />
              </form>
-        </>
+        </div>
        
     )
 }

@@ -6,8 +6,8 @@ export default function Expense({expense}){
     const {deleteExpense} = useContext(GlobalContext);
     console.log(expense)
     return(
-        <div>
-            <p>{expense.transactionName} {expense.amount} <span onClick={()=> deleteExpense(expense.id)}>X</span></p>
-        </div>
+        <li className='expenseItem item'>
+           <span className='itemName'>{expense.transactionName}</span> <span className='transaction-amount'>{expense.amount}</span> <span className='delete-btn' onClick={()=> deleteExpense(expense.id)}><i className="fas fa-times"></i></span>
+        </li>
     )
 }

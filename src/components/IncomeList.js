@@ -6,14 +6,17 @@ const IncomeList = () =>{
     const {transaction} = useContext(GlobalContext);
     console.log(transaction.incomes)
       return(
-        <div>
-            <h2>Income List</h2>
+        <div className='incomeList transaction'>
+            <h3 className='incomeList-heading transactions-heading'>Income List</h3>
+            <ul className='incomes list'>
             {transaction.incomes.map(income =>{
                 return(
                     <Income key={income.id} income={income} />
                     
                 )
             })}
+            </ul>
+           
         </div>
       );
 }

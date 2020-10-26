@@ -3,18 +3,8 @@ import AppReducer from './AppReducer';
 
 const initialState = {
     transactions: {
-        expenses: [{
-            id: 1,
-            transactionName: 'Chair',
-            amount: 20,
-            description: 'expense'
-        }] ,
-        incomes: [{
-            id: 1,
-            transactionName: 'Project',
-            amount: 30,
-            description: 'income'
-        }]
+        expenses: [] ,
+        incomes: []
     }
 }
 
